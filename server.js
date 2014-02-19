@@ -19,7 +19,7 @@ app.get('/primeFactors', function(req, res) {
   for(var i = 0; i < power; i++) {
     results.push(2);
   }
-  res.send({"number": number+1, "decomposition": results});
+  res.send({"number": number, "decomposition": results});
 });
 
 var port = Number(process.env.PORT || 5000);
