@@ -9,7 +9,17 @@ app.get('/', function(req, res) {
 
 app.get('/ping', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  res.send('{"alive" : true}');
+  res.send({"alive" : true});
+});
+
+app.get('/primeFactors', function(req, res) {
+  var number = Number(req.query.number);
+  var power = Math.log(number) / Math.log(2);
+  var results = [];
+  for(var i = 0; i < power; i++) {
+    results.push(2);
+  }
+  res.send({"number": number+1, "decomposition": results});
 });
 
 var port = Number(process.env.PORT || 5000);
