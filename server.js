@@ -6,6 +6,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/ping', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
   res.send('{"active" : true}');
 });
 
